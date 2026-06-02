@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USDTZ — Project</title>
+    <meta
+      name="description"
+      content="USDTZ — проект на BNB Smart Chain. Контракт, Total Supply и ссылка на BscScan."
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <meta property="og:title" content="USDTZ" />
+    <meta
+      property="og:description"
+      content="Контракт USDTZ, Total Supply и ссылка на BscScan."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./assets/logo-usdtz.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <img
+            class="logo"
+            src="./assets/logo-usdtz.svg"
+            alt="Логотип USDTZ"
+            width="44"
+            height="44"
+          />
+          <div class="brandText">
+            <div class="brandName">USDTZ</div>
+            <div class="brandMeta">BNB Smart Chain</div>
+          </div>
+        </div>
+
+        <a
+          class="btn btnPrimary"
+          href="https://bscscan.com/address/0xb60aad9d014640067d71b4c2736ac578314daff3"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="btnIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M14 3h7v7m0-7L10 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          BscScan
+        </a>
+      </header>
+
+      <main class="content">
+        <section class="hero">
+          <div class="heroLeft">
+            <div class="badge">
+              <span class="dot" aria-hidden="true"></span>
+              Project page
+            </div>
+            <h1 class="h1">USDTZ</h1>
+            <p class="lead">
+              Минимальная страница проекта с ключевыми данными: адрес контракта, Total
+              Supply и проверка через BscScan.
+            </p>
+            <div class="heroActions">
+              <button class="btn" id="copyBtn" type="button">
+                <span class="btnIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 9h10v10H9V9Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                Скопировать контракт
+              </button>
+              <a
+                class="btn btnGhost"
+                href="https://bscscan.com/address/0xb60aad9d014640067d71b4c2736ac578314daff3"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Открыть в BscScan
+              </a>
+            </div>
+          </div>
+
+          <div class="heroRight">
+            <div class="panel">
+              <div class="panelTitle">Контракт</div>
+              <div class="contract">
+                <code id="contract">0xb60aad9d014640067d71b4c2736ac578314daff3</code>
+              </div>
+              <div class="panelMeta">
+                <div class="metaItem">
+                  <div class="metaLabel">Total Supply</div>
+                  <div class="metaValue" id="totalSupply">5,000,000,000</div>
+                </div>
+                <div class="metaItem">
+                  <div class="metaLabel">Explorer</div>
+                  <a
+                    class="metaLink"
+                    id="bscscanLink"
+                    href="https://bscscan.com/address/0xb60aad9d014640067d71b4c2736ac578314daff3"
+                    target="_blank"
+                    rel="noreferrer"
+                    >BscScan</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="grid">
+          <article class="infoCard">
+            <div class="infoTop">
+              <div class="infoIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 1l3 6 6 3-6 3-3 6-3-6-6-3 6-3 3-6Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="infoLabel">Название</div>
+                <div class="infoValue">USDTZ</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="infoCard">
+            <div class="infoTop">
+              <div class="infoIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M4 7h16M4 12h16M4 17h10"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="infoLabel">Контракт</div>
+                <div class="infoMono">
+                  0xb60aad9d014640067d71b4c2736ac578314daff3
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="infoCard">
+            <div class="infoTop">
+              <div class="infoIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2v20M6 6h11a3 3 0 0 1 0 6H7a3 3 0 0 0 0 6h12"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="infoLabel">Total Supply</div>
+                <div class="infoValue">5,000,000,000</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="infoCard">
+            <div class="infoTop">
+              <div class="infoIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M10 14a5 5 0 0 1 7-7l2 2M14 10a5 5 0 0 1-7 7l-2-2"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="infoLabel">Ссылка</div>
+                <a
+                  class="infoLink"
+                  href="https://bscscan.com/address/0xb60aad9d014640067d71b4c2736ac578314daff3"
+                  target="_blank"
+                  rel="noreferrer"
+                  >BscScan (контракт)</a
+                >
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>©</span>
+        <span id="year"></span>
+        <span>USDTZ</span>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+      (function () {
+        const contractEl = document.getElementById("contract");
+        const copyBtn = document.getElementById("copyBtn");
+        const toast = document.getElementById("toast");
+        const year = document.getElementById("year");
+        year.textContent = String(new Date().getFullYear());
+
+        let toastTimer = null;
+        function showToast(message, kind) {
+          if (!toast) return;
+          toast.classList.remove("isSuccess", "isError");
+          toast.classList.add(kind === "error" ? "isError" : "isSuccess");
+          toast.textContent = message;
+          toast.classList.add("isVisible");
+          if (toastTimer) window.clearTimeout(toastTimer);
+          toastTimer = window.setTimeout(() => toast.classList.remove("isVisible"), 1600);
+        }
+
+        async function copyText(text) {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+            return;
+          }
+
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.left = "-9999px";
+          textarea.style.top = "-9999px";
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        }
+
+        copyBtn.addEventListener("click", async function () {
+          const text = contractEl.textContent.trim();
+          try {
+            await copyText(text);
+            showToast("Контракт скопирован", "success");
+          } catch (e) {
+            showToast("Не удалось скопировать", "error");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+

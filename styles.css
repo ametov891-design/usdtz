@@ -1,0 +1,459 @@
+:root {
+  color-scheme: dark;
+  --bg: #070a14;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel2: rgba(255, 255, 255, 0.04);
+  --stroke: rgba(255, 255, 255, 0.14);
+  --stroke2: rgba(255, 255, 255, 0.18);
+  --text: #eef2ff;
+  --muted: rgba(238, 242, 255, 0.7);
+  --muted2: rgba(238, 242, 255, 0.55);
+  --brand1: #7c3aed;
+  --brand2: #22c55e;
+  --shadow: rgba(0, 0, 0, 0.38);
+  --shadow2: rgba(0, 0, 0, 0.55);
+  --ring: rgba(124, 58, 237, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Noto Sans", "Liberation Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(900px 520px at 15% 0%, rgba(124, 58, 237, 0.35), transparent 65%),
+    radial-gradient(800px 480px at 100% 15%, rgba(34, 197, 94, 0.24), transparent 60%),
+    radial-gradient(900px 700px at 55% 110%, rgba(124, 58, 237, 0.14), transparent 60%);
+  filter: saturate(1.05);
+}
+
+.page {
+  min-height: 100%;
+  width: min(1060px, calc(100% - 48px));
+  margin: 24px auto 0;
+  padding-bottom: 26px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 4px 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandText {
+  min-width: 0;
+}
+
+.brandName {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  line-height: 1.1;
+}
+
+.brandMeta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.heroLeft {
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 24px 60px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroLeft::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(500px 240px at 35% 0%, rgba(124, 58, 237, 0.35), transparent 55%),
+    radial-gradient(420px 240px at 95% 30%, rgba(34, 197, 94, 0.22), transparent 60%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.heroLeft > * {
+  position: relative;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, var(--brand1), var(--brand2));
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.18);
+}
+
+.h1 {
+  margin: 14px 0 0;
+  font-size: clamp(34px, 4.5vw, 48px);
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: -0.8px;
+}
+
+.lead {
+  margin: 12px 0 0;
+  max-width: 54ch;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.heroActions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring), 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+}
+
+.btnIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btnPrimary {
+  border-color: rgba(124, 58, 237, 0.32);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.28), rgba(34, 197, 94, 0.14));
+}
+
+.btnPrimary:hover {
+  border-color: rgba(124, 58, 237, 0.55);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.36), rgba(34, 197, 94, 0.18));
+}
+
+.btnGhost {
+  background: rgba(0, 0, 0, 0.14);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.btnGhost:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.heroRight {
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 24px 60px var(--shadow);
+}
+
+.panelTitle {
+  font-size: 12px;
+  color: var(--muted2);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 10px;
+}
+
+.contract code {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.22);
+  padding: 12px 12px;
+  border-radius: 16px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.panelMeta {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.metaItem {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.metaLabel {
+  font-size: 12px;
+  color: var(--muted2);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.metaValue {
+  margin-top: 6px;
+  font-weight: 950;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.metaLink {
+  display: inline-flex;
+  margin-top: 6px;
+  font-weight: 900;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(124, 58, 237, 0.6);
+}
+
+.metaLink:hover {
+  border-bottom-color: rgba(34, 197, 94, 0.7);
+}
+
+.grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.infoCard {
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
+}
+
+.infoTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: radial-gradient(20px 20px at 30% 20%, rgba(124, 58, 237, 0.26), transparent 60%),
+    radial-gradient(20px 20px at 80% 60%, rgba(34, 197, 94, 0.2), transparent 60%),
+    rgba(0, 0, 0, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.infoIcon svg {
+  width: 20px;
+  height: 20px;
+  color: rgba(238, 242, 255, 0.92);
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--muted2);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.infoValue {
+  margin-top: 6px;
+  font-weight: 950;
+  font-size: 20px;
+}
+
+.infoMono {
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  color: rgba(238, 242, 255, 0.9);
+  word-break: break-all;
+}
+
+.infoLink {
+  margin-top: 8px;
+  display: inline-flex;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid rgba(124, 58, 237, 0.32);
+  background: rgba(124, 58, 237, 0.12);
+  padding: 9px 11px;
+  border-radius: 12px;
+}
+
+.infoLink:hover {
+  border-color: rgba(124, 58, 237, 0.55);
+  background: rgba(124, 58, 237, 0.18);
+}
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(18px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(238, 242, 255, 0.92);
+  box-shadow: 0 18px 50px var(--shadow2);
+  font-weight: 850;
+  letter-spacing: 0.2px;
+  transition: opacity 160ms ease, transform 160ms ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.toast.isVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.isSuccess {
+  border-color: rgba(34, 197, 94, 0.28);
+}
+
+.toast.isError {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 920px) {
+  .page {
+    width: min(980px, calc(100% - 32px));
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .panelMeta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btnPrimary {
+    justify-content: center;
+  }
+  .panelMeta {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .toast {
+    transition: none;
+  }
+}
+
